@@ -9,11 +9,14 @@ import PublicRoute from "./components/PublicRoute/PublicRoute";
 import { connect } from "react-redux";
 import registrationOperations from "./redux/registration/registrationOperations";
 import Contacts from "./components/Contacts/Contacts";
+import contactsOperations from "./redux/contacts/contactsOperations";
 
 class App extends Component {
   componentDidMount() {
     this.props.onGetCurrentUser();
+    this.props.onViewContacts();
   }
+
   render() {
     return (
       <>
@@ -31,8 +34,10 @@ class App extends Component {
     );
   }
 }
+
 const mapDispatchToProps = {
   onGetCurrentUser: registrationOperations.getCurrentUser,
+  onViewContacts: contactsOperations.fetchContacts,
 };
 
 export default connect(null, mapDispatchToProps)(App);

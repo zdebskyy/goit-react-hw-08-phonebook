@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import registrationOperations from "../../redux/registration/registrationOperations";
+import "./Login.css";
 
 class Login extends Component {
   state = {
@@ -20,27 +21,33 @@ class Login extends Component {
     const { email, password } = this.state;
     return (
       <div>
-        <h2>Login:</h2>
-        <form>
-          <label>
+        <h2 className="logTitle">Login:</h2>
+        <form className="logForm">
+          <label className="labelName">
             Email
             <input
               type="email"
               name="email"
               value={email}
               onChange={(e) => this.handleChange(e)}
+              className="inputForm"
             />
           </label>
-          <label>
+          <label className="labelName">
             Password
             <input
               type="password"
               name="password"
               value={password}
               onChange={(e) => this.handleChange(e)}
+              className="inputForm"
             />
           </label>
-          <button type="submit" onClick={(e) => this.handleFormSubmit(e)}>
+          <button
+            type="submit"
+            onClick={(e) => this.handleFormSubmit(e)}
+            className="buttonSubmit"
+          >
             Submit
           </button>
         </form>

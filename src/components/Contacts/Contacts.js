@@ -15,9 +15,6 @@ class Contacts extends Component {
     name: "",
     number: "",
   };
-  componentDidMount() {
-    this.props.onViewContacts();
-  }
 
   notify = () =>
     toast.error(" This contact already exist!", {
@@ -63,14 +60,14 @@ class Contacts extends Component {
             label="Name"
             type="text"
             value={name}
-            placeholder="Enter your name"
+            placeholder="Enter name"
             onInput={this.handleInput}
           />
           <InputForm
             label="Number"
             type="tel"
             value={number}
-            placeholder="Enter your number"
+            placeholder="Enter number"
             onInput={this.handleNumber}
           />
           <button type="submit" className="buttonSubmit">
@@ -100,7 +97,6 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = {
   onAddContact: contactsOperations.addContact,
-  onViewContacts: contactsOperations.fetchContacts,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contacts);

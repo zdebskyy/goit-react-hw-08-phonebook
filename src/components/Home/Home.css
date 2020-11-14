@@ -1,0 +1,9 @@
+.homeTitle {
+  text-align: center;
+  font-size: 34px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.homeLink {
+  color: blueviolet;
+  text-decoration: none;
+}
